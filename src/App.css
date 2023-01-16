@@ -45,6 +45,7 @@ body {
   position: relative;
   transition: transform 0.5s;
   transform-style: preserve-3d;
+  cursor: pointer;
 }
 
 .face {
@@ -72,4 +73,16 @@ img {
 
 .card#is-flipped {
   transform: rotateY(180deg);
+}
+
+.btn {
+  margin: 0.3rem auto;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 1.8rem;
 }

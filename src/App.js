@@ -2,6 +2,7 @@ import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 import "./App.css";
 import Cards from "./components/Cards";
+import Flip from "./components/Flip";
 
 export default function App() {
   const [cards, setCards] = useState([]);
@@ -34,9 +35,18 @@ export default function App() {
     );
   };
 
+  const resetAll = () => {
+    setCards(
+      cards.map((card) => {
+        return { ...card, rotate: false };
+      })
+    );
+  };
+
   return (
     <main>
       <Cards cards={cards} flipCard={flipCard} />
+      <Flip resetAll={resetAll} />
     </main>
   );
 }

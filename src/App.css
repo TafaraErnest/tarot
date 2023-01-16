@@ -19,7 +19,7 @@ html {
 
 body {
   font-size: 1.6rem;
-  background-color: var(--color-dark);
+  background-color: var(--color-light);
   color: var(--color-dark);
   font-family: var(--main-font);
 }
@@ -75,12 +75,16 @@ img {
   transform: rotateY(180deg);
 }
 
+.btns {
+  display: flex;
+  justify-content: center;
+}
+
 .btn {
-  margin: 0.3rem auto;
   width: fit-content;
   padding: 0.5rem 1rem;
-  background-color: var(--color-light);
-  color: var(--color-dark);
+  background-color: var(--color-dark);
+  color: var(--color-light);
   border-radius: 0.5rem;
   cursor: pointer;
   text-transform: uppercase;

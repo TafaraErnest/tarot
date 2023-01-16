@@ -36,13 +36,6 @@ export default function App() {
   };
 
   const resetAll = () => {
-    setCards(
-      cards.map((card) => {
-        if (card.rotate) {
-          return { ...card, rotate: false };
-        } else return card;
-      })
-    );
     setCards(generate());
   };
 

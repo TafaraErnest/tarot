@@ -4,12 +4,11 @@ import "./App.css";
 import Cards from "./components/Cards";
 
 export default function App() {
-  const [numCards, setNumCards] = useState(9);
   const [cards, setCards] = useState([]);
 
   const generate = () => {
     const arr = [];
-    for (let i = 0; i < numCards; i++) {
+    for (let i = 0; i < 9; i++) {
       arr.push({
         id: nanoid(),
         number: Math.ceil(Math.random() * 78),
@@ -21,7 +20,7 @@ export default function App() {
 
   useEffect(() => {
     setCards(generate());
-  }, [numCards]);
+  }, []);
 
   const flipCard = (id) => {
     setCards(
@@ -37,7 +36,7 @@ export default function App() {
 
   return (
     <main>
-      <Cards numCards={numCards} cards={cards} flipCard={flipCard} />
+      <Cards cards={cards} flipCard={flipCard} />
     </main>
   );
 }

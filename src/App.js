@@ -38,9 +38,12 @@ export default function App() {
   const resetAll = () => {
     setCards(
       cards.map((card) => {
-        return { ...card, rotate: false };
+        if (card.rotate) {
+          return { ...card, rotate: false };
+        } else return card;
       })
     );
+    setCards(generate());
   };
 
   return (

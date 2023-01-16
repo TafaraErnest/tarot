@@ -1,0 +1,75 @@
+:root {
+  /* Colors */
+  --color-light: #f5f5f5;
+  --color-dark: #333;
+
+  /* Font */
+  --main-font: sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: var(--color-dark);
+  color: var(--color-dark);
+  font-family: var(--main-font);
+}
+
+.cards {
+  width: 39rem;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 3rem;
+}
+
+.scene {
+  perspective: 60rem;
+  height: 20rem;
+  width: 13rem;
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.front {
+  height: 100%;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0.2rem 0.5rem rgba(250, 250, 250, 1);
+}
+
+.card#is-flipped {
+  transform: rotateY(180deg);
+}

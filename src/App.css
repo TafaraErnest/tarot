@@ -36,7 +36,6 @@ body {
 .title {
   font-size: 2rem;
   text-transform: uppercase;
-  margin: 1rem 0;
 }
 
 button {
@@ -45,7 +44,6 @@ button {
   color: var(--color-dark);
   padding: 1rem 2rem;
   font-size: 2rem;
-  margin: 1rem 0;
 }
 
 .cards {

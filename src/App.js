@@ -38,7 +38,7 @@ export default function App() {
 
   return (
     <main className="page">
-      <h2 className="title">Yuan Tarot</h2>
+      {/* <h2 className="title">Yuan Tarot</h2> */}
       <Cards cards={cards} flipCard={flipCard} spinCard={spinCard} />
       <button
         onClick={() => {

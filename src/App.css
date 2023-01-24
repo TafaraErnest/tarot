@@ -7,7 +7,9 @@
   --main-font: sans-serif;
 }
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
 }
@@ -19,24 +21,44 @@ html {
 
 body {
   font-size: 1.6rem;
-  background-color: var(--color-light);
-  color: var(--color-dark);
   font-family: var(--main-font);
+  color: var(--color-dark);
+}
+
+.page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 1rem 0;
+}
+
+button {
+  background: none;
+  border: 2px solid var(--color-dark);
+  color: var(--color-dark);
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  margin: 1rem 0;
 }
 
 .cards {
-  width: 39rem;
-  margin: 1rem auto;
+  width: 30%;
+  height: 70%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-gap: 3rem;
+  grid-gap: 1rem;
 }
 
 .scene {
   perspective: 60rem;
-  height: 20rem;
-  width: 13rem;
+  min-height: 18rem;
 }
 
 .card {
@@ -45,8 +67,6 @@ body {
   position: relative;
   transition: transform 0.5s;
   transform-style: preserve-3d;
-  cursor: pointer;
-  border-radius: 0.5rem;
 }
 
 .face {
@@ -54,7 +74,6 @@ body {
   height: 100%;
   width: 100%;
   backface-visibility: hidden;
-  border-radius: 0.5rem;
 }
 
 .front {
@@ -70,34 +89,65 @@ body {
 img {
   width: 100%;
   height: 100%;
-  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
-  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(250, 250, 250, 1);
 }
 
 .card#is-flipped {
   transform: rotateY(180deg);
 }
 
-.btns {
-  display: flex;
-  justify-content: center;
+#rotate {
+  transform: rotateX(180deg);
 }
 
-.btn {
-  width: fit-content;
-  padding: 1rem 2rem;
-  background-color: var(--color-dark);
-  color: var(--color-light);
-  border-radius: 0.5rem;
-  border: none;
-  text-transform: uppercase;
-  font-size: 2rem;
-  transition: all 0.2s ease-in;
+#spinCard {
+  animation: spinCard 0.5s ease-in-out;
 }
 
-.btn:hover {
-  background-color: var(--color-light);
-  color: var(--color-dark);
-  border: 2px solid var(--color-dark);
-  cursor: pointer;
+@keyframes spinCard {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#spinAnti {
+  animation: spinAnti 0.5s ease-in-out;
+}
+
+@keyframes spinAnti {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .cards {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .cards {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .cards {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cards {
+    width: 95%;
+  }
 }

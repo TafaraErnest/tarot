@@ -30,7 +30,7 @@ body {
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .title {

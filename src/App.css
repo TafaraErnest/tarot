@@ -58,7 +58,6 @@ button {
 
 .scene {
   perspective: 60rem;
-  min-height: 18rem;
 }
 
 .card {
